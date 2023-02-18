@@ -9,6 +9,7 @@ let video = document.getElementById('video');
 let canvasOutput = document.getElementById('canvasOutput');
 let canvasOutputCtx = canvasOutput.getContext('2d');
 let stream = null;
+let segundaLeitura = false;
 
 
 
@@ -102,12 +103,26 @@ function processVideo() {
 function drawResults(ctx, results, color, size) {
   for (let i = 0; i < results.length; ++i) {
     let rect = results[i];
-    let xRatio = videoWidth/size.width;
-    let yRatio = videoHeight/size.height;
+    let xRatio = videoWidth / size.width;
+    let yRatio = videoHeight / size.height;
     ctx.lineWidth = 3;
     ctx.strokeStyle = color;
-    ctx.strokeRect(rect.x*xRatio, rect.y*yRatio, rect.width*xRatio, rect.height*yRatio);
+    ctx.strokeRect(
+      rect.x * xRatio,
+      rect.y * yRatio,
+      rect.width * xRatio,
+      rect.height * yRatio
+    );
   }
+
+  if (!segundaLeitura) {
+    if (results.length > 0) {
+      document.getElementById("btnScreenshot").disabled = false;
+    } else {
+      document.getElementById("btnScreenshot").disabled = true;
+    }
+  }
+  segundaLeitura = !segundaLeitura;
 }
 function opencvIsReady() {
   console.log('OpenCV.js is ready');
