@@ -1,5 +1,7 @@
 canvas {
     border: 1px solid black;
+    width: 30;
+    height: 50;
   }
   .invisible {
     display: none;
@@ -10,4 +12,8 @@ canvas {
   .center-block {
     display: block;
     margin: auto;
+  }
+  .column {
+    width: 10vw;
+    height: 30vh;
   }
