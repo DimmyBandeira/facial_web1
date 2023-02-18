@@ -2,6 +2,11 @@ canvas {
     border: 1px solid black;
     width: 30;
     height: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background: #f6f5f4;
   }
   .invisible {
     display: none;
@@ -13,7 +18,19 @@ canvas {
     display: block;
     margin: auto;
   }
-  .column {
-    width: 10vw;
-    height: 30vh;
-  }
+
+.button {
+  border: none;
+  padding: 20px 40px;
+  font-size: 44px;
+  position: relative;
+  background: transparent;
+  color: #043c23;
+  text-transform: uppercase;
+  border: 3px solid #043c23;
+  cursor: pointer;
+  transition: all 0.7s;
+  overflow: hidden;
+  border-radius: 100px;
+  align-items: center;
+}
